@@ -4,13 +4,15 @@ To test it, install the libraries in the requirements.txt file and try running t
 
 
 ##  TODO
+MAIN: CREATE TEST_POLICY METHOD TO CHECK WIN RATE USING THE POLICY OUTPUT
 
-1. Change blackjack gym env (lines 178-181 in blackjack.py) in order to print which cards dealer draws after player stays (just for info/debugging, kind of wierd they didn't already implement that)
-2. Instead of interacting via keyboard, we will be training an agent to decide what to do (RL learning, where agent will be rewarded/punished for winning/losing rounds)
-3. add more functionality to blackjack env such as:
-    - Splitting cards
-    - Doubling down
+1. Check if your logic for terminal state checks is right
+2. Tweak parameters, see how policy changes
+3. Attempt hard coding always hit if less than 12
+4. Add double feature to environment (if results get better for hit/stay variant)
+5. Implement running count as part of observation
+6. HISTOGRAM/POLICY VISUALIZATION
 
-3. We also need to come up with some benchmark comparisons, such as randomly choosing hit/stay, and see how that does compared to a slightly better strategy, and finally compared to our agent/agents 
 
-4. If time allows, we should completely change how the env works. right now, it simply picks a card at random with replacement, so there is no accurate model checking which cards have already been played, and there is no logic for 'shuffling' the deck after a certain amount of rounds
+
+

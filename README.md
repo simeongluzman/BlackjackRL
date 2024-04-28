@@ -1,8 +1,11 @@
 ## Requirements:
 
 numpy
+
 pandas
+
 seaborn
+
 matplotlib.pyplot
 
 ## USAGE:

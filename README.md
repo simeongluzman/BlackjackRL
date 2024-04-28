@@ -1,17 +1,39 @@
-test1.ipynb contains the initial test for interacting with the blackjack env in the gym library, just so we understand how the environment works b4 we move on to making the logic for the agent. 
+## Requirements:
 
-To test it, install the libraries in the requirements.txt file and try running the box below. If you have issues  w installation (i had a few), just ask chatgpt and it will help. i needed to install a lib called swig. 
+numpy
+pandas
+seaborn
+matplotlib.pyplot
+
+## USAGE:
+
+To test the code, Run the import statements at the top of DataV3, the q-learning function, and then you can adjust the 
+hyperparameters and try extracting a policy. 
 
 
-##  TODO
-MAIN: CREATE TEST_POLICY METHOD TO CHECK WIN RATE USING THE POLICY OUTPUT
+## DECK.py
 
-1. Check if your logic for terminal state checks is right
-2. Tweak parameters, see how policy changes
-3. Attempt hard coding always hit if less than 12
-4. Add double feature to environment (if results get better for hit/stay variant)
-5. Implement running count as part of observation
-6. HISTOGRAM/POLICY VISUALIZATION
+This file is used to simulate the blackjack table, and allows player to make moves. 
+Example Usage:
+
+table = Deck.BlackJackEnv(5)
+table.start_round()
+table.next(0) 0 for stand, 1 for hit 2 for double down
+Both start_round and next return: player hand, dealer hand, hasAce, roundStarted, reward, runningCount, hasDoubled
+
+## PolicyH.py
+
+This file contains the helper functions to visualize policy outputs and also the try_policy function to evaluate a policy in a long simulation. 
+
+## DataV3.ipynb
+
+This is the main file, and contains the q-learning algorithm along with helper functions. 
+It also contains sample runs which we used for our results, and the hyperparameters.
+
+
+## rewards-deck.txt
+
+Contains results from running card-counting agent on different numbers of decsk
 
 
 

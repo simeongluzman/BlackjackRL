@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import Deck
 
 
+
 def map_policies(policies, countCards):
     # Constants
     player_values = list(range(4, 22))
@@ -33,9 +34,14 @@ def map_policies(policies, countCards):
     strat.append(['S', 'S', 'S', 'S', 'S', 'S', 'S', 'S', 'S', 'S'])
     # Insert the hardcoded optimal policy at the beginning of the list
     pols = []
+
+    #Asked ChatGPT to help create a function that visualizes the optimal policy using seaborn heatmap
+    #Also asked to account for the case where we need a 2x2 table (R1 neutral - Optimal R2: High - Low)
+    # And the case where we need just 1x2 (Neutral - Optimal)                                                            
+    #Count cards case
     if countCards:
-        pols.append(policies[1])
-        pols.append(strat)
+        pols.append(policies[1]) #policies 1 is the neutral strategy
+        pols.append(strat) #Hardcoded optimal policy for comparison
         pols.append(policies[0])
         pols.append(policies[2])
 
@@ -63,6 +69,8 @@ def map_policies(policies, countCards):
 
         plt.tight_layout()
         plt.show()
+
+    #NO CARD COUNTING CASE
     else:
         pols.append(policies)
         pols.append(strat)
@@ -86,7 +94,7 @@ def map_policies(policies, countCards):
             axes[idx].set_xlabel("Dealer's Face-Up Card")
             axes[idx].set_ylabel("Player's Total" if idx % 2 == 0 else "")
 
-
+#TRY Policy- Inspired from MDP Assignment. Returns avg rewards per round, winrate, lossrate, drawrate
 def try_policy(policy, ace_policy, countCards, numDecks):
     env = Deck.BlackJackEnv(numDecks)
     rewards = 0.0

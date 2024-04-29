@@ -10,7 +10,7 @@ matplotlib.pyplot
 
 ## USAGE:
 
-To test the code, Run the import statements at the top of DataV3, the q-learning function, and then you can adjust the 
+To test the code, Run the import statements at the top of Approach2, the q-learning function, and then you can adjust the 
 hyperparameters and try extracting a policy. 
 
 
@@ -28,15 +28,21 @@ Both start_round and next return: player hand, dealer hand, hasAce, roundStarted
 
 This file contains the helper functions to visualize policy outputs and also the try_policy function to evaluate a policy in a long simulation. 
 
-## DataV3.ipynb
+## Approach2.ipynb
 
 This is the main file, and contains the q-learning algorithm along with helper functions. 
 It also contains sample runs which we used for our results, and the hyperparameters.
 
+## Approach3.ipynb
 
-## rewards-deck.txt
+This is last attempt at artificially training used high/low count decks
 
-Contains results from running card-counting agent on different numbers of decsk
+
+
+## Special_DECK.py
+
+Adjusted deck code to either include high or low running count deck
+
 
 
 
